@@ -1,0 +1,56 @@
+doctype html
+html
+    head
+        title my demo
+    body
+        // html标签
+        h1 Hello World
+
+        // 添加id 和 class
+        #content
+            #block.name.age test
+
+        // 嵌套
+        ul#books
+            li
+                a(href="aaa") Book A
+            li
+                a(href="bbb") Book B
+
+        // 内容   res.render('index', data)向页面传数据
+        h1 foo
+        h2= text.book.name
+        h3 #{text.book.name} 每本#{text.book.price}
+
+        // 变量
+        h1= "网站域名" + variable
+
+        // 属性
+        input(type=inputVals.type, placeholder="姓名", value=inputVals.name)#ipt
+
+        // if else
+        if ifElse.name == 'mzy'
+            h1 Hello mzy
+        else
+            h1 else text
+
+        // for each
+        select
+            each item in forEachVals
+                option(value=item) Book #{item}
+
+        // case
+        case caseVals
+            when 'mzy'
+                p Hey Mazhaoyang
+            when 'sss'
+                p Hey sss
+            default
+                p Hello
+
+        // mixin
+        mixin book(name, price)
+            li #{name} for #{price} €
+        ul#list
+            +book("Book A", 12.99)
+            +book("Book B", 5.99)
